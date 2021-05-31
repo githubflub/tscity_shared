@@ -17,6 +17,7 @@ export const MessageFragment = {
          thread_id
          send_time
          content
+         type
          __typename
       }
       ${UserGroupFragments.main}
