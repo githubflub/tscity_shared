@@ -5,16 +5,26 @@ export const MessageFragment = {
    user: gql`
       fragment MessageUser on Message {
          id
-         sender {
-            id
-            username
-            display_name
-            groups {
-               ...UserGroupMain
-            }
-            __typename
+         sender_id
+         sender_username
+         sender_display_name
+         sender_groups {
+            context
+            context_id
+            group
+            user_id
          }
-         thread_id
+         origin_thread_id
+         thread_ids
+         targets {
+            target_type
+            user_id
+            username
+            user_display_name
+            thread_id
+            thread_internal_name
+            thread_display_name
+         }
          send_time
          content
          type
